@@ -9,64 +9,78 @@ import {
   addEdge 
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
+import './FlowPanel.scss';
 
-// Define initial nodes
-const initialNodes = [
-  {
-    id: '1',
+// Node types with their styles and metadata
+const NODE_TYPES = {
+  KUSTO_QUERY: {
     type: 'input',
-    data: { label: 'Kusto Query' },
-    position: { x: 250, y: 25 },
-    style: {
-      background: '#ebf8ff',
-      color: '#2b6cb0',
-      border: '1px solid #2b6cb0',
-      width: 180,
-    },
+    label: 'Kusto Query',
+    cssClass: 'node-kusto-query',
+    description: 'Execute a Kusto query against a database'
   },
-  {
-    id: '2',
-    data: { label: 'Template Prompt' },
-    position: { x: 100, y: 125 },
-    style: {
-      background: '#fefcbf',
-      color: '#744210',
-      border: '1px solid #744210',
-      width: 180,
-    },
+  TEMPLATE_PROMPT: {
+    type: 'default',
+    label: 'Template Prompt',
+    cssClass: 'node-template-prompt',
+    description: 'Define a prompt template for AI processing'
   },
-  {
-    id: '3',
-    data: { label: 'LLM Execution' },
-    position: { x: 400, y: 125 },
-    style: {
-      background: '#e9d8fd',
-      color: '#553c9a',
-      border: '1px solid #553c9a',
-      width: 180,
-    },
+  LLM_EXECUTION: {
+    type: 'default',
+    label: 'LLM Execution',
+    cssClass: 'node-llm-execution',
+    description: 'Execute a request against a language model'
   },
-  {
-    id: '4',
+  RESULT_OUTPUT: {
     type: 'output',
-    data: { label: 'Result Output' },
-    position: { x: 250, y: 250 },
-    style: {
-      background: '#c6f6d5',
-      color: '#22543d',
-      border: '1px solid #22543d',
-      width: 180,
-    },
-  },
+    label: 'Result Output',
+    cssClass: 'node-result-output',
+    description: 'Display or export the final results'
+  }
+};
+
+// Node placement configuration
+const nodeLayout = [
+  { id: '1', nodeType: NODE_TYPES.KUSTO_QUERY, position: { x: 250, y: 25 } },
+  { id: '2', nodeType: NODE_TYPES.TEMPLATE_PROMPT, position: { x: 100, y: 125 } },
+  { id: '3', nodeType: NODE_TYPES.LLM_EXECUTION, position: { x: 400, y: 125 } },
+  { id: '4', nodeType: NODE_TYPES.RESULT_OUTPUT, position: { x: 250, y: 250 } }
 ];
 
-// Define connections between nodes
-const initialEdges = [
-  { id: 'e1-2', source: '1', target: '2' },
-  { id: 'e1-3', source: '1', target: '3' },
-  { id: 'e2-4', source: '2', target: '4' },
-  { id: 'e3-4', source: '3', target: '4' },
+// Connection configuration - just define the relationships between nodes
+const connectionLayout = [
+  { source: '1', target: '2' },
+  { source: '1', target: '3' },
+  { source: '2', target: '4' },
+  { source: '3', target: '4' }
 ];
+
+// Generate nodes from the configuration
+const generateNodes = (nodeConfig) => {
+  return nodeConfig.map(config => ({
+    id: config.id,
+    type: config.nodeType.type || 'default',
+    data: { 
+      label: config.nodeType.label,
+      description: config.nodeType.description 
+    },
+    position: config.position,
+    className: config.nodeType.cssClass
+  }));
+};
+
+// Generate edges from connection configuration
+const generateEdges = (connections) => {
+  return connections.map(conn => ({
+    id: `e${conn.source}-${conn.target}`,
+    source: conn.source,
+    target: conn.target
+  }));
+};
+
+// Create initial nodes and edges
+const initialNodes = generateNodes(nodeLayout);
+const initialEdges = generateEdges(connectionLayout);
 
 const FlowPanel = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -78,7 +92,7 @@ const FlowPanel = () => {
   );
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div className="flow-panel-container">
       <ReactFlow
         nodes={nodes}
         edges={edges}

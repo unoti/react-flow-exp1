@@ -1,0 +1,36 @@
+// FlowPanel.scss
+.flow-panel-container {
+  height: 100%;
+  width: 100%;
+}
+
+// Node styles - target ReactFlow's node elements
+.react-flow__node {
+  &.node-kusto-query {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    border: 1px solid #2b6cb0;
+    width: 180px;
+  }
+
+  &.node-template-prompt {
+    background: #fefcbf;
+    color: #744210;
+    border: 1px solid #744210;
+    width: 180px;
+  }
+
+  &.node-llm-execution {
+    background: #e9d8fd;
+    color: #553c9a;
+    border: 1px solid #553c9a;
+    width: 180px;
+  }
+
+  &.node-result-output {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #22543d;
+    width: 180px;
+  }
+}

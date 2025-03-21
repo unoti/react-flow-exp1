@@ -21,23 +21,54 @@ The completed application will allow users to set up automated workflows for pro
 
 
 ## Getting Up to Speed
+* Use this to start chats with agents. *
+
 We're working on an application in C:\Users\rilack\code\react-flow-exp1
-Read README.md and run git ls-files to understand the codebase.
+This is a React app using Fluent UI.  It's about allowing users to work with flowchart-style
+nodes and edges using React Flow.  Ultimately we're allowing users to define workflows of operations
+to perform in an AI application.  The nodes are things to do such as running Kusto queries, extracting
+sub-parts out of JSON data, running LLM calls, and things of that nature.
+
+Here's an (abbreviated) recent run of `git ls-files` to give you an idea of what's here:
+```
+.gitignore
+README.md
+package-lock.json
+package.json
+public/index.html
+src/App.css
+src/App.js
+src/App.test.js
+src/components/Flow.jsx
+src/components/FlowPanel.jsx
+src/components/FlowPanel.scss
+src/components/PropertyPanel.jsx
+src/components/Tools.jsx
+src/components/index.js
+src/index.css
+src/index.js
+src/logo.svg
+src/reportWebVitals.js
+src/setupTests.js
+```
+
 
 ## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Install
+```
+npm install
+```
 
-### Setup and Running
-
-In the project directory, you can run:
-
+### Running
 ```
 npm start
 ```
 
 This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+
+### Build
 For production builds:
 
 ```
