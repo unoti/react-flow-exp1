@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* React Flow specific styles */
+.react-flow__node {
+  padding: 10px;
+  border-radius: 3px;
+  width: 150px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.react-flow__node-input {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.react-flow__node-default {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.react-flow__node-output {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background-color: #888;
+}
+
+.react-flow__handle-top {
+  top: -4px;
+}
+
+.react-flow__handle-bottom {
+  bottom: -4px;
+}
+
+.react-flow__handle-left {
+  left: -4px;
+}
+
+.react-flow__handle-right {
+  right: -4px;
+}
+
+.react-flow__edge-path {
+  stroke: #888;
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+.react-flow__mini-map {
+  background-color: #f8f8f8;
+}

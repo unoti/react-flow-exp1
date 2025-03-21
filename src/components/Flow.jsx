@@ -8,21 +8,35 @@ const Flow = () => {
     <div style={{ 
       display: 'flex', 
       width: '100%', 
-      height: '100vh',
+      height: '100%',
       overflow: 'hidden'
     }}>
-      {/* Left Panel - Tools (30% width) */}
-      <div style={{ width: '30%', height: '100%', borderRight: '1px solid #ccc' }}>
+      {/* Left Panel - Tools (25% width) */}
+      <div style={{ 
+        width: '25%', 
+        height: '100%', 
+        borderRight: '1px solid #ccc',
+        overflow: 'auto'
+      }}>
         <Tools />
       </div>
       
       {/* Middle Panel - Flow Panel (flexible width) */}
-      <div style={{ flex: 1, height: '100%' }}>
+      <div style={{ 
+        flex: 1, 
+        height: '100%',
+        position: 'relative'
+      }}>
         <FlowPanel />
       </div>
       
       {/* Right Panel - Property Panel */}
-      <div style={{ width: '300px', height: '100%', borderLeft: '1px solid #ccc' }}>
+      <div style={{ 
+        width: '300px', 
+        height: '100%', 
+        borderLeft: '1px solid #ccc',
+        overflow: 'auto'
+      }}>
         <PropertyPanel />
       </div>
     </div>
