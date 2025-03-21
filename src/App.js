@@ -1,11 +1,11 @@
 import React from 'react';
 import { 
   CommandBar, 
-  Text, 
   initializeIcons,
   ThemeProvider,
   mergeStyles
 } from '@fluentui/react';
+import { Flow } from './components';
 import './App.css';
 
 // Initialize the Fluent UI icons
@@ -21,12 +21,8 @@ const appContainerStyle = mergeStyles({
 // Main content panel styles
 const mainContentStyle = mergeStyles({
   flex: 1,
-  padding: '20px',
-  backgroundColor: '#f5f5f5',
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
+  overflow: 'hidden',
 });
 
 function App() {
@@ -121,10 +117,9 @@ function App() {
           }}
         />
         
-        {/* Main Content */}
+        {/* Main Content - Flow Component */}
         <div className={mainContentStyle}>
-          <Text variant="xxLarge">Hello World</Text>
-          <Text>Welcome to your Fluent UI React application!</Text>
+          <Flow />
         </div>
       </div>
     </ThemeProvider>

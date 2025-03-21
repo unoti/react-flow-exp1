@@ -14,6 +14,7 @@ The primary goal is to establish a framework for specifying automated workflows 
 - Connection capabilities between nodes
 - Visual representation of process flows
 - Configuration options for each node type
+- Uses Fluent UI components
 
 ## Target Functionality
 The completed application will allow users to set up automated workflows for processing data through various stages, from querying databases to generating AI-powered responses.
