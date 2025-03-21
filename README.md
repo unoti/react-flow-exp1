@@ -3,6 +3,11 @@
 ## Project Overview
 This project is an experimental UI built using React Flow to create a basic workflow application. The application allows users to add flowchart elements to the UI and connect them to each other, creating visual representations of workflows.
 
+*We're writing this application using AI Agents as a research
+project.  This version was written by Claude 3.7 Sonnet using Claude Desktop and the [Desktop Commander MCP from wonderwhy-er](https://github.com/wonderwhy-er/ClaudeDesktopCommander/tree/main).  Details of exactly what we typed at every stage are recorded in [doc/history.md](doc/history.md)*.
+
+![app screenshot of flowchart nodes](doc/img/react-flow-exp1-screenshot.png)
+
 ## Purpose
 The primary goal is to establish a framework for specifying automated workflows that involve:
 - Kusto queries
