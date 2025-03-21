@@ -19,6 +19,11 @@ The primary goal is to establish a framework for specifying automated workflows 
 ## Target Functionality
 The completed application will allow users to set up automated workflows for processing data through various stages, from querying databases to generating AI-powered responses.
 
+
+## Getting Up to Speed
+We're working on an application in C:\Users\rilack\code\react-flow-exp1
+Read README.md and run git ls-files to understand the codebase.
+
 ## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
